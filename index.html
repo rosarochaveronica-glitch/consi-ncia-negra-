@@ -3,199 +3,601 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consciência Negra: Memória, Cultura e Resistência</title>
+
+  <title>Consciência Negra | Memória, Cultura e Resistência</title>
+
   <link rel="stylesheet" href="style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Modal de Detalhes -->
-  <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
-    <div class="modal-container" role="dialog" aria-modal="true">
-      <button class="modal-close" id="modal-close" aria-label="Fechar modal">&times;</button>
-      <div id="modal-body" class="modal-body"></div>
-    </div>
-  </div>
-
-  <!-- Navegação -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-accent">Consciência</span> & Resistência
+
+      <a href="#inicio" class="logo">
+        <span>Consciência</span> Negra
       </a>
-      <ul class="nav-links">
-        <li><a href="#sobre">Sobre o Dia</a></li>
-        <li><a href="#personalidades">Personalidades</a></li>
-        <li><a href="#marcos">Linha do Tempo</a></li>
-        <li><a href="#reflexao">Reflexões</a></li>
-        <li><a href="#quiz">Quiz Cultural</a></li>
-      </ul>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Alternar Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
       </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#personalidades">Personalidades</a></li>
+        <li><a href="#linha-do-tempo">História</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+      </ul>
+
     </div>
   </nav>
 
-  <!-- Cabeçalho / Hero -->
-  <header id="hero" class="hero-section">
+
+  <!-- HERO -->
+  <header class="hero" id="inicio">
+
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
-      <span class="hero-badge">20 de Novembro</span>
-      <h1>Dia Nacional de Zumbi e da Consciência Negra</h1>
-      <p>Celebrando a ancestralidade, a cultura afro-brasileira e a luta contínua por equidade, justiça e libertação.</p>
-      <div class="hero-actions">
-        <a href="#sobre" class="btn btn-primary">Explorar História</a>
-        <a href="#quiz" class="btn btn-outline">Testar Conhecimentos</a>
+
+      <span class="hero-date">20 DE NOVEMBRO</span>
+
+      <h1>
+        Dia Nacional de Zumbi
+        <br>
+        e da Consciência Negra
+      </h1>
+
+      <p>
+        Memória, ancestralidade, cultura e resistência
+        fazem parte da história e da identidade do Brasil.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#sobre" class="btn btn-primary">
+          Conheça a história
+        </a>
+
+        <a href="#quiz" class="btn btn-outline">
+          Fazer o quiz
+        </a>
       </div>
+
     </div>
+
   </header>
 
-  <main class="main-content">
-    <!-- Seção Sobre -->
-    <section id="sobre" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Memória & Origens</span>
-          <h2 class="section-title">O Significado do 20 de Novembro</h2>
-          <div class="title-underline"></div>
-        </div>
-        <div class="about-grid">
-          <div class="about-card">
-            <div class="card-icon">https://www.andes.org.br/img/midias/1167a0dc9fe9f7ecf477c668ede15238_1574273205.jpg</div>
-            <h3>Simbolismo e Origem</h3>
-            <p>O Dia Nacional de Zumbi e da Consciência Negra, celebrado em 20 de novembro, consolida essa mudança de perspectiva histórica no Brasil.
 
-Significado das Datas
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
 
-20 de Novembro (Consciência Negra): Simboliza a luta, a autonomia e o protagonismo negro. A data homenageia Zumbi dos Palmares e ressalta a resistência contra o sistema escravocrata organizada pelo próprio povo negro.
-
-13 de Maio (Abolição da Escravatura): Marca a assinatura da Lei Áurea em 1888. O movimento negro critica a data por ter sido historicamente associada a uma perspectiva paternalista, que concedeu a liberdade sem garantir direitos básicos, acesso à terra ou integração social para os recém-libertos.</p>
-          </div>
-          <div class="about-card">
-            <div class="card-icon">🏛️</div>
-            <h3>O Quilombo dos Palmares</h3>
-            <p>Localizado na Serra da Barriga (AL), Palmares foi o maior refúgio de pessoas escravizadas das Américas. Chegou a abrigar mais de 20 mil habitantes, funcionando como um estado autônomo baseado na cooperação e liberdade.</p>
-          </div>
-          <div class="about-card">
-            <div class="card-icon">📜</div>
-            <h3>Marco Histórico Nacional</h3>
-            <p>Origem e Significado: Diferente do 13 de maio (associação paternalista da Lei Áurea), o 20 de novembro marca a morte de Zumbi dos Palmares em 1695. A data foi escolhida pelo movimento negro para enfatizar a resistência ativa, a autonomia e a liderança do próprio povo negro na busca pela liberdade.
-
-Marcos Legais: Oficializado como Dia Nacional da Consciência Negra pela Lei nº 12.519/2011 e consolidado como Feriado Nacional em 2023, o dia convoca a sociedade a combater o racismo estrutural.
-
-Protagonismo Histórico: A trajetória da luta negra no Brasil é representada por figuras fundamentais:
-
-Resistência e Liderança: Zumbi e Dandara dos Palmares, e Luísa Mahin.
-
-Direito e Abolicionismo: Luiz Gama.
-
-Literatura e Cultura: Maria Firmina dos Reis e Machado de Assis.
-
-Pensamento Crítico: Lélia Gonzalez..</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção Personalidades -->
-    <section id="personalidades" class="section bg-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Protagonistas</span>
-          <h2 class="section-title">Grandes Nomes da História</h2>
-          <div class="title-underline"></div>
-        </div>
-        
-        <!-- Filtros -->
-        <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="lideranca">Liderança & História</button>
-          <button class="filter-btn" data-filter="literatura">Literatura & Arte</button>
-          <button class="filter-btn" data-filter="ciencia">Ciência & Direito</button>
-        </div>
-
-        <div class="cards-grid" id="figures-grid">
-          <!-- Gerado dinamicamente via JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção Linha do Tempo -->
-    <section id="marcos" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Trajetória</span>
-          <h2 class="section-title">Marcos da Luta Antirracista no Brasil</h2>
-          <div class="title-underline"></div>
-        </div>
-
-        <div class="timeline" id="timeline">
-          <!-- Gerado dinamicamente via JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção Reflexão / Gerador de Citações -->
-    <section id="reflexao" class="section bg-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Pensamento Crítico</span>
-          <h2 class="section-title">Vozes da Consciência</h2>
-          <div class="title-underline"></div>
-        </div>
-
-        <div class="quote-card">
-          <div class="quote-mark">“</div>
-          <p class="quote-text" id="quote-text">Numa sociedade racista, não basta não ser racista, é preciso ser antirracista.</p>
-          <p class="quote-author" id="quote-author">— Angela Davis</p>
-          <button class="btn btn-secondary" id="btn-next-quote">Nova Reflexão ↻</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção Quiz -->
-    <section id="quiz" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Interatividade</span>
-          <h2 class="section-title">Quiz de Conhecimentos Históricos</h2>
-          <div class="title-underline"></div>
-        </div>
-
-        <div class="quiz-card" id="quiz-container">
-          <div class="quiz-header">
-            <span id="quiz-progress">Pergunta 1 de 5</span>
-            <div class="quiz-score-badge" id="quiz-score-badge">Pontuação: 0</div>
-          </div>
-          <div class="quiz-body">
-            <h3 id="quiz-question" class="quiz-question">Carregando pergunta...</h3>
-            <div id="quiz-options" class="quiz-options">
-              <!-- Opções renderizadas via JS -->
-            </div>
-            <div id="quiz-feedback" class="quiz-feedback"></div>
-          </div>
-          <div class="quiz-footer">
-            <button id="quiz-next-btn" class="btn btn-primary" style="display: none;">Próxima Pergunta</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Rodapé -->
-  <footer class="footer">
     <div class="container">
-      <p class="footer-title">Projeto Educativo — Consciência Negra</p>
-      <p class="footer-sub">Desenvolvido para promoção da história, cultura e igualdade racial.</p>
-      <div class="footer-divider"></div>
-      <p class="footer-copy">&copy; 2026 Memória e Resistência. Conteúdo de caráter pedagógico e cultural.</p>
+
+      <div class="section-title">
+        <span>MEMÓRIA E ORIGENS</span>
+        <h2>Por que o dia 20 de novembro é importante?</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="about-grid">
+
+        <article class="about-card">
+
+          <div class="about-image">
+            <img
+              src="https://www.feiradesantana.ba.leg.br/wp-content/uploads/2023/11/655b50b1d39c5.jpeg"
+              alt="Pessoa negra em representação cultural"
+            >
+          </div>
+
+          <div class="about-content">
+
+            <span class="card-number">01</span>
+
+            <h3>Consciência Negra</h3>
+
+            <p>
+              O Dia Nacional de Zumbi e da Consciência Negra,
+              celebrado em 20 de novembro, representa a valorização
+              da história, da cultura e da resistência da população negra.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="about-card">
+
+          <div class="about-image">
+            <img
+              src="https://i.pinimg.com/736x/bf/df/84/bfdf84ac23174363ef6574b79ef7f686.jpg"
+              alt="Paisagem representando a história dos quilombos"
+            >
+          </div>
+
+          <div class="about-content">
+
+            <span class="card-number">02</span>
+
+            <h3>Quilombo dos Palmares</h3>
+
+            <p>
+              O Quilombo dos Palmares foi um dos maiores símbolos
+              de resistência à escravidão no Brasil. Localizado na
+              região da Serra da Barriga, em Alagoas, tornou-se
+              símbolo de liberdade e organização coletiva.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="about-card">
+
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1607877361964-bf72f7b1b9a7?auto=format&fit=crop&w=900&q=80"
+              alt="Representação de cultura e identidade"
+            >
+          </div>
+
+          <div class="about-content">
+
+            <span class="card-number">03</span>
+
+            <h3>Memória e Resistência</h3>
+
+            <p>
+              Celebrar a Consciência Negra também significa reconhecer
+              as contribuições africanas e afro-brasileiras para a
+              música, culinária, literatura, ciência, política e cultura.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
     </div>
+
+  </section>
+
+
+  <!-- DESTAQUE -->
+  <section class="quote-section">
+
+    <div class="quote-overlay"></div>
+
+    <div class="quote-content">
+
+      <span>RESISTÊNCIA</span>
+
+      <h2>
+        "Nossa história não começa na escravidão.
+        Ela começa muito antes."
+      </h2>
+
+      <p>
+        Conhecer a história é também reconhecer
+        a força, a cultura e a contribuição dos povos africanos.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PERSONALIDADES -->
+  <section class="section dark-section" id="personalidades">
+
+    <div class="container">
+
+      <div class="section-title light">
+
+        <span>PROTAGONISTAS</span>
+
+        <h2>
+          Grandes nomes da história
+        </h2>
+
+        <div class="line"></div>
+
+      </div>
+
+
+      <div class="people-grid">
+
+        <article class="person-card">
+
+          <div class="person-image">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Zumbi.jpg"
+              alt="Representação de Zumbi dos Palmares"
+            >
+          </div>
+
+          <div class="person-content">
+
+            <span>LIDERANÇA</span>
+
+            <h3>Zumbi dos Palmares</h3>
+
+            <p>
+              Símbolo da resistência negra e uma das principais
+              figuras associadas ao Quilombo dos Palmares.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="person-card">
+
+          <div class="person-image">
+            <img
+              src="https://esesp.es.gov.br/Media/esesp/_Profiles/c4d8c6e6/83491884/consciencianegra_01.jpg?v=638724290950784350"
+              alt="Luiz Gama"
+            >
+          </div>
+
+          <div class="person-content">
+
+            <span>DIREITO</span>
+
+            <h3>Luiz Gama</h3>
+
+            <p>
+              Escritor, jornalista e advogado que atuou na luta
+              contra a escravidão e pela liberdade de pessoas negras.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="person-card">
+
+          <div class="person-image">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/06/Maria_Firmina_dos_Reis.jpg"
+              alt="Maria Firmina dos Reis"
+            >
+          </div>
+
+          <div class="person-content">
+
+            <span>LITERATURA</span>
+
+            <h3>Maria Firmina dos Reis</h3>
+
+            <p>
+              Escritora brasileira considerada pioneira da literatura
+              afro-brasileira e autora de obras marcadas pela crítica
+              à escravidão.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="person-card">
+
+          <div class="person-image">
+            <img
+              src="https://crp21.org.br/wp-content/uploads/2023/11/404257137_18312815338138606_8811253006157490469_n.jpg"
+              alt="Lélia Gonzalez"
+            >
+          </div>
+
+          <div class="person-content">
+
+            <span>PENSAMENTO</span>
+
+            <h3>Lélia Gonzalez</h3>
+
+            <p>
+              Intelectual, professora e ativista brasileira que teve
+              papel fundamental nos estudos sobre raça e gênero no Brasil.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LINHA DO TEMPO -->
+  <section class="section" id="linha-do-tempo">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>TRAJETÓRIA</span>
+
+        <h2>Linha do tempo</h2>
+
+        <div class="line"></div>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="timeline-year">1695</div>
+
+          <div class="timeline-content">
+
+            <h3>Morte de Zumbi</h3>
+
+            <p>
+              Zumbi dos Palmares é morto em 20 de novembro,
+              data que posteriormente se tornou símbolo da
+              resistência negra no Brasil.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-year">1888</div>
+
+          <div class="timeline-content">
+
+            <h3>Lei Áurea</h3>
+
+            <p>
+              A escravidão é oficialmente abolida no Brasil
+              pela Lei Áurea.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-year">1970s</div>
+
+          <div class="timeline-content">
+
+            <h3>Fortalecimento do movimento negro</h3>
+
+            <p>
+              O movimento negro brasileiro fortalece a defesa
+              da igualdade racial e da valorização da identidade negra.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-year">2011</div>
+
+          <div class="timeline-content">
+
+            <h3>Lei nº 12.519</h3>
+
+            <p>
+              O dia 20 de novembro é instituído oficialmente
+              como Dia Nacional de Zumbi e da Consciência Negra.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-year">2023</div>
+
+          <div class="timeline-content">
+
+            <h3>Feriado Nacional</h3>
+
+            <p>
+              A data passa a ser feriado nacional no Brasil,
+              reforçando sua importância histórica e cultural.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CULTURA -->
+  <section class="culture-section">
+
+    <div class="container">
+
+      <div class="culture-grid">
+
+        <div class="culture-text">
+
+          <span>CULTURA</span>
+
+          <h2>
+            A influência africana
+            na cultura brasileira
+          </h2>
+
+          <p>
+            A presença africana está profundamente ligada à formação
+            da sociedade brasileira. Música, dança, religião,
+            culinária, língua, festas e diversas manifestações
+            culturais carregam essa herança.
+          </p>
+
+          <p>
+            Valorizar essa contribuição é reconhecer uma parte
+            essencial da identidade do Brasil.
+          </p>
+
+        </div>
+
+
+        <div class="culture-images">
+
+          <img
+            src="https://www.andes.org.br/img/midias/1167a0dc9fe9f7ecf477c668ede15238_1574273205.jpg"
+            alt="Manifestação cultural"
+          >
+
+          <img
+            src="https://s2.static.brasilescola.uol.com.br/img/2019/11/movimento-negro.jpg"
+            alt="Música e cultura"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REFLEXÃO -->
+  <section class="reflection">
+
+    <div class="container">
+
+      <div class="reflection-box">
+
+        <span>PARA REFLETIR</span>
+
+        <h2 id="reflectionText">
+          O que podemos fazer hoje para construir
+          uma sociedade mais justa?
+        </h2>
+
+        <button id="newReflection" class="btn btn-primary">
+          Nova reflexão
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUIZ -->
+  <section class="section quiz-section" id="quiz">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>INTERATIVIDADE</span>
+
+        <h2>Quiz da Consciência Negra</h2>
+
+        <div class="line"></div>
+
+      </div>
+
+
+      <div class="quiz-card">
+
+        <div class="quiz-top">
+
+          <span id="questionNumber">
+            Pergunta 1 de 5
+          </span>
+
+          <strong id="score">
+            Pontos: 0
+          </strong>
+
+        </div>
+
+
+        <h3 id="question">
+          Carregando pergunta...
+        </h3>
+
+
+        <div id="options" class="options"></div>
+
+
+        <div id="feedback" class="feedback"></div>
+
+
+        <button
+          id="nextQuestion"
+          class="btn btn-primary next-btn"
+          style="display:none;"
+        >
+          Próxima pergunta
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-logo">
+        Consciência <span>Negra</span>
+      </div>
+
+      <p>
+        Memória • Cultura • Resistência • Igualdade
+      </p>
+
+      <div class="footer-line"></div>
+
+      <small>
+        Projeto educativo sobre história e cultura afro-brasileira.
+      </small>
+
+    </div>
+
   </footer>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>

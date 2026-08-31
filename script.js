@@ -1,408 +1,347 @@
-// Dados do Projeto
-const personalidades = [
-  {
-    id: 1,
-    nome: "Zumbi dos Palmares",
-    categoria: "lideranca",
-    icone: "⚔️",
-    resumo: "Último líder do Quilombo dos Palmares e maior símbolo de resistência à escravidão no Brasil.",
-    detalhes: "Zumbi nasceu em Alagoas em 1655. Liderou a resistência do Quilombo dos Palmares contra as investidas das forças coloniais portuguesas. Defendeu a liberdade irrestrita do seu povo até a sua morte, em 20 de novembro de 1695, data que hoje celebra a Consciência Negra."
-  },
-  {
-    id: 2,
-    nome: "Dandara dos Palmares",
-    categoria: "lideranca",
-    icone: "🛡️",
-    resumo: "Guerreira quilombola, estrategista e liderança fundamental na defesa de Palmares.",
-    detalhes: "Dandara foi uma das principais lideranças femininas de Palmares. Dominava técnicas de capoeira e teve papel central nas batalhas do quilombo. Recusou o acordo de paz que previa a libertação parcial dos quilombolas se outros permanecessem escravizados, lutando até o fim por libertação plena."
-  },
-  {
-    id: 3,
-    nome: "Machado de Assis",
-    categoria: "literatura",
-    icone: "✍️",
-    resumo: "Fundador da Academia Brasileira de Letras e considerado um dos maiores escritores do mundo.",
-    detalhes: "Joaquim Maria Machado de Assis (1839–1908), homem negro nascido no Rio de Janeiro, superou as barreiras sociais da época para se tornar o maior nome da literatura brasileira. Escreveu obras-primas como 'Dom Casmurro' e 'Memórias Póstumas de Brás Cubas'."
-  },
-  {
-    id: 4,
-    nome: "Carolina Maria de Jesus",
-    categoria: "literatura",
-    icone: "📖",
-    resumo: "Escritora, poetisa e compositora brasileira, autora de 'Quarto de Despejo'.",
-    detalhes: "Carolina Maria de Jesus (1914–1977) foi uma das primeiras e mais importantes escritoras negras do Brasil. Morando na favela do Canindé, em São Paulo, relatou em diários a dura realidade da fome e da pobreza. Seu livro 'Quarto de Despejo: Diário de uma Favela' foi traduzido para mais de 13 idiomas."
-  },
-  {
-    id: 5,
-    nome: "Luiz Gama",
-    categoria: "ciencia",
-    icone: "⚖️",
-    resumo: "Rábula, jornalista, escritor e patrono da abolição da escravidão no Brasil.",
-    detalhes: "Vendido como escravo pelo próprio pai aos 10 anos, Luiz Gama (1830–1882) alfabetizou-se aos 17 anos e conquistou sua liberdade. Tornou-se um jurista autodidata brilhante, libertando judicialmente mais de 500 pessoas escravizadas no Brasil sem cobrar honorários."
-  },
-  {
-    id: 6,
-    nome: "Lélia Gonzalez",
-    categoria: "ciencia",
-    icone: "🧠",
-    resumo: "Intelectual, autora, política, professora e antropóloga pioneira do feminismo negro.",
-    detalhes: "Lélia Gonzalez (1935–1994) foi pioneira nos estudos sobre a interseccionalidade de raça e gênero. Formulou o conceito de 'Amefricanidade' e foi uma das fundadoras do Movimento Negro Unificado (MNU), sendo referência global no pensamento social crítico."
-  }
-];
+// ================================
+// MENU MOBILE
+// ================================
 
-const marcosHistoricos = [
-  {
-    ano: "1695",
-    titulo: "Morte de Zumbi dos Palmares",
-    descricao: "Assassinado em 20 de novembro pelas forças coloniais, Zumbi torna-se símbolo imortal da resistência negra no Brasil."
-  },
-  {
-    ano: "1871",
-    titulo: "Lei do Ventre Livre",
-    descricao: "Declara livres os filhos de mulheres escravizadas nascidos a partir daquela data, em uma tentativa de desacelerar o movimento abolicionista."
-  },
-  {
-    ano: "1888",
-    titulo: "Abolição Formal (Lei Áurea)",
-    descricao: "O Brasil torna-se o último país do Ocidente a abolir officially a escravidão, sem contudo garantir terra, direitos ou integração social aos libertos."
-  },
-  {
-    ano: "1978",
-    titulo: "Fundação do MNU",
-    descricao: "Em plena ditadura militar, é fundado em São Paulo o Movimento Negro Unificado, marco da reorganização contemporânea da luta antirracista."
-  },
-  {
-    ano: "2003",
-    titulo: "Lei 10.639/03",
-    descricao: "Torna obrigatório o ensino de História e Cultura Afro-Brasileira nas escolas de ensino fundamental e médio do país."
-  },
-  {
-    ano: "2023",
-    titulo: "Feriado Nacional",
-    descricao: "Sancionada a lei que torna o Dia Nacional de Zumbi e da Consciência Negra feriado em todo o território brasileiro."
-  }
-];
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-const citacoes = [
-  { texto: "Numa sociedade racista, não basta não ser racista, é preciso ser antirracista.", autor: "Angela Davis" },
-  { texto: "Onde houver escravidão, não haverá liberdade de pensamento.", autor: "Luiz Gama" },
-  { texto: "A minha luta diária é para ser reconhecida como sujeito, impor minha existência numa sociedade que insiste em me negar.", autor: "Djamila Ribeiro" },
-  { texto: "Não sou descendente de escravos. Sou descendente de seres humanos que foram escravizados.", autor: "Makota Valdina" },
-  { texto: "Eu não sou livre enquanto qualquer mulher for prisioneira, mesmo que as correntes dela sejam diferentes das minhas.", autor: "Audre Lorde" },
-  { texto: "A humanidade é uma só, e os direitos devem ser iguais para todos.", autor: "Lélia Gonzalez" }
-];
-
-const quizPerguntas = [
-  {
-    pergunta: "Por que o dia 20 de novembro foi escolhido como o Dia da Consciência Negra?",
-    opcoes: [
-      "Foi a data da assinatura da Lei Áurea em 1888.",
-      "Marca a data da morte de Zumbi dos Palmares em 1695.",
-      "É o aniversário de nascimento de Luiz Gama.",
-      "Corresponde à fundação do Quilombo dos Palmares."
-    ],
-    correta: 1,
-    explicacao: "A data homenageia Zumbi dos Palmares, que faleceu em 20 de novembro de 1695 defendendo o quilombo."
-  },
-  {
-    pergunta: "O Quilombo dos Palmares ficava localizado em qual estado atual do Brasil?",
-    opcoes: [
-      "Bahia",
-      "Rio de Janeiro",
-      "Alagoas",
-      "Pernambuco"
-    ],
-    correta: 2,
-    explicacao: "Palmares localizava-se na Serra da Barriga, região do atual estado de Alagoas."
-  },
-  {
-    pergunta: "Qual escritora negra brasileira relatou sua vida na favela na obra 'Quarto de Despejo'?",
-    opcoes: [
-      "Conceição Evaristo",
-      "Carolina Maria de Jesus",
-      "Djamila Ribeiro",
-      "Lélia Gonzalez"
-    ],
-    correta: 1,
-    explicacao: "Carolina Maria de Jesus publicou 'Quarto de Despejo' em 1960, tornando-se um marco literário internacional."
-  },
-  {
-    pergunta: "Qual lei tornou obrigatório o ensino da História e Cultura Afro-Brasileira nas escolas?",
-    opcoes: [
-      "Lei nº 10.639/2003",
-      "Lei Áurea",
-      "Lei dos Sexagenários",
-      "Lei de Cotas Raciais"
-    ],
-    correta: 0,
-    explicacao: "A Lei 10.639/03 alterou a LDB para incluir a temática afro-brasileira no currículo escolar."
-  },
-  {
-    pergunta: "Quem foi o jurista autodidata que libertou mais de 500 pessoas escravizadas no século XIX?",
-    opcoes: [
-      "Machado de Assis",
-      "José do Patrocínio",
-      "Luiz Gama",
-      "André Rebouças"
-    ],
-    correta: 2,
-    explicacao: "Luiz Gama usou o direito e a advocacia libertária para obter a soltura de centenas de escravizados."
-  }
-];
-
-// Inicialização
-document.addEventListener("DOMContentLoaded", () => {
-  renderFigures("all");
-  renderTimeline();
-  setupFilterButtons();
-  setupQuoteGenerator();
-  setupQuiz();
-  setupNavigation();
-  setupModal();
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
 });
 
-// Navegação Mobile
-function setupNavigation() {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
+// ================================
+// REFLEXÕES
+// ================================
+
+const reflections = [
+  "O que podemos fazer hoje para construir uma sociedade mais justa?",
+
+  "Conhecer a história também é uma forma de combater o preconceito.",
+
+  "Como podemos valorizar a cultura afro-brasileira no nosso cotidiano?",
+
+  "A igualdade racial depende da participação de toda a sociedade.",
+
+  "Que histórias de pessoas negras você gostaria de conhecer melhor?",
+
+  "Respeitar diferentes culturas é reconhecer a riqueza da diversidade."
+];
+
+let reflectionIndex = 0;
+
+const reflectionText =
+  document.getElementById("reflectionText");
+
+const newReflection =
+  document.getElementById("newReflection");
+
+newReflection.addEventListener("click", () => {
+
+  reflectionIndex++;
+
+  if (reflectionIndex >= reflections.length) {
+    reflectionIndex = 0;
   }
-}
 
-// Renderização de Personalidades
-function renderFigures(filter) {
-  const grid = document.getElementById("figures-grid");
-  if (!grid) return;
+  reflectionText.style.opacity = "0";
 
-  grid.innerHTML = "";
+  setTimeout(() => {
 
-  const filtered = filter === "all" 
-    ? personalidades 
-    : personalidades.filter(p => p.categoria === filter);
+    reflectionText.textContent =
+      reflections[reflectionIndex];
 
-  filtered.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "figure-card";
-    card.innerHTML = `
-      <div class="figure-header">
-        <div class="figure-avatar">${item.icone}</div>
-        <span class="figure-tag">${getCategoriaLabel(item.categoria)}</span>
-        <h3>${item.nome}</h3>
-      </div>
-      <div class="figure-body">
-        <p>${item.resumo}</p>
-        <button class="btn-know-more" onclick="openModal(${item.id})">Saiba Mais</button>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-}
+    reflectionText.style.opacity = "1";
 
-function getCategoriaLabel(cat) {
-  switch (cat) {
-    case "lideranca": return "Liderança";
-    case "literatura": return "Literatura";
-    case "ciencia": return "Ciência & Direito";
-    default: return "História";
+  }, 200);
+
+});
+
+
+// ================================
+// QUIZ
+// ================================
+
+const questions = [
+
+  {
+    question:
+      "Em qual data é celebrado o Dia Nacional de Zumbi e da Consciência Negra?",
+
+    options: [
+      "13 de maio",
+      "20 de novembro",
+      "7 de setembro",
+      "21 de abril"
+    ],
+
+    answer: 1
+  },
+
+  {
+    question:
+      "Quem foi Zumbi dos Palmares?",
+
+    options: [
+      "Um imperador português",
+      "Um escritor brasileiro",
+      "Uma importante liderança do Quilombo dos Palmares",
+      "Um presidente do Brasil"
+    ],
+
+    answer: 2
+  },
+
+  {
+    question:
+      "Onde estava localizado o Quilombo dos Palmares?",
+
+    options: [
+      "Na região da Serra da Barriga, em Alagoas",
+      "No Rio Grande do Sul",
+      "Em Brasília",
+      "No Amazonas"
+    ],
+
+    answer: 0
+  },
+
+  {
+    question:
+      "Em que ano foi assinada a Lei Áurea?",
+
+    options: [
+      "1500",
+      "1695",
+      "1822",
+      "1888"
+    ],
+
+    answer: 3
+  },
+
+  {
+    question:
+      "Qual escritora é considerada uma pioneira da literatura afro-brasileira?",
+
+    options: [
+      "Maria Firmina dos Reis",
+      "Clarice Lispector",
+      "Cecília Meireles",
+      "Rachel de Queiroz"
+    ],
+
+    answer: 0
   }
-}
 
-function setupFilterButtons() {
-  const buttons = document.querySelectorAll(".filter-btn");
-  buttons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      buttons.forEach(b => b.classList.remove("active"));
-      e.target.classList.add("active");
-      renderFigures(e.target.getAttribute("data-filter"));
-    });
-  });
-}
+];
 
-// Linha do Tempo
-function renderTimeline() {
-  const timeline = document.getElementById("timeline");
-  if (!timeline) return;
 
-  timeline.innerHTML = "";
-
-  marcosHistoricos.forEach(marco => {
-    const item = document.createElement("div");
-    item.className = "timeline-item";
-    item.innerHTML = `
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <div class="timeline-year">${marco.ano}</div>
-        <h4>${marco.titulo}</h4>
-        <p>${marco.descricao}</p>
-      </div>
-    `;
-    timeline.appendChild(item);
-  });
-}
-
-// Citações
-function setupQuoteGenerator() {
-  const quoteText = document.getElementById("quote-text");
-  const quoteAuthor = document.getElementById("quote-author");
-  const btnNext = document.getElementById("btn-next-quote");
-
-  if (!quoteText || !quoteAuthor || !btnNext) return;
-
-  let lastIndex = 0;
-
-  btnNext.addEventListener("click", () => {
-    let randomIndex;
-    do {
-      randomIndex = Math.floor(Math.random() * citacoes.length);
-    } while (randomIndex === lastIndex && citacoes.length > 1);
-
-    lastIndex = randomIndex;
-    const selected = citacoes[randomIndex];
-
-    quoteText.style.opacity = 0;
-    quoteAuthor.style.opacity = 0;
-
-    setTimeout(() => {
-      quoteText.innerText = `"${selected.texto}"`;
-      quoteAuthor.innerText = `— ${selected.autor}`;
-      quoteText.style.opacity = 1;
-      quoteAuthor.style.opacity = 1;
-    }, 200);
-  });
-}
-
-// Quiz
-let currentQuestionIndex = 0;
+let currentQuestion = 0;
 let score = 0;
+let answered = false;
 
-function setupQuiz() {
-  renderQuestion();
 
-  const nextBtn = document.getElementById("quiz-next-btn");
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      currentQuestionIndex++;
-      if (currentQuestionIndex < quizPerguntas.length) {
-        renderQuestion();
-      } else {
-        renderQuizResult();
-      }
+const questionElement =
+  document.getElementById("question");
+
+const optionsElement =
+  document.getElementById("options");
+
+const feedbackElement =
+  document.getElementById("feedback");
+
+const nextButton =
+  document.getElementById("nextQuestion");
+
+const questionNumber =
+  document.getElementById("questionNumber");
+
+const scoreElement =
+  document.getElementById("score");
+
+
+function loadQuestion() {
+
+  answered = false;
+
+  feedbackElement.textContent = "";
+
+  nextButton.style.display = "none";
+
+  const question = questions[currentQuestion];
+
+  questionNumber.textContent =
+    `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+
+  questionElement.textContent =
+    question.question;
+
+  optionsElement.innerHTML = "";
+
+  question.options.forEach((option, index) => {
+
+    const button = document.createElement("button");
+
+    button.classList.add("option");
+
+    button.textContent = option;
+
+    button.addEventListener("click", () => {
+      selectAnswer(index);
     });
-  }
-}
 
-function renderQuestion() {
-  const q = quizPerguntas[currentQuestionIndex];
-  document.getElementById("quiz-progress").innerText = `Pergunta ${currentQuestionIndex + 1} de ${quizPerguntas.length}`;
-  document.getElementById("quiz-question").innerText = q.pergunta;
+    optionsElement.appendChild(button);
 
-  const optionsContainer = document.getElementById("quiz-options");
-  optionsContainer.innerHTML = "";
-
-  const feedback = document.getElementById("quiz-feedback");
-  feedback.innerText = "";
-  feedback.className = "quiz-feedback";
-
-  document.getElementById("quiz-next-btn").style.display = "none";
-
-  q.opcoes.forEach((opcao, idx) => {
-    const btn = document.createElement("button");
-    btn.className = "quiz-option";
-    btn.innerText = opcao;
-    btn.addEventListener("click", () => checkAnswer(idx));
-    optionsContainer.appendChild(btn);
-  });
-}
-
-function checkAnswer(selectedIndex) {
-  const q = quizPerguntas[currentQuestionIndex];
-  const options = document.querySelectorAll(".quiz-option");
-  const feedback = document.getElementById("quiz-feedback");
-
-  options.forEach((btn, idx) => {
-    btn.disabled = true;
-    if (idx === q.correta) {
-      btn.classList.add("correct");
-    }
-    if (idx === selectedIndex && selectedIndex !== q.correta) {
-      btn.classList.add("wrong");
-    }
   });
 
-  if (selectedIndex === q.correta) {
+}
+
+
+function selectAnswer(selectedIndex) {
+
+  if (answered) return;
+
+  answered = true;
+
+  const question = questions[currentQuestion];
+
+  const buttons =
+    document.querySelectorAll(".option");
+
+  buttons.forEach(button => {
+    button.disabled = true;
+  });
+
+
+  if (selectedIndex === question.answer) {
+
+    buttons[selectedIndex]
+      .classList.add("correct");
+
     score++;
-    document.getElementById("quiz-score-badge").innerText = `Pontuação: ${score}`;
-    feedback.innerText = "✓ Correto! " + q.explicacao;
-    feedback.style.color = "#2ecc71";
+
+    scoreElement.textContent =
+      `Pontos: ${score}`;
+
+    feedbackElement.textContent =
+      "✓ Resposta correta!";
+
+    feedbackElement.style.color =
+      "#3b873b";
+
   } else {
-    feedback.innerText = "✕ Incorreto. " + q.explicacao;
-    feedback.style.color = "#e74c3c";
+
+    buttons[selectedIndex]
+      .classList.add("wrong");
+
+    buttons[question.answer]
+      .classList.add("correct");
+
+    feedbackElement.textContent =
+      "✗ Resposta incorreta.";
+
+    feedbackElement.style.color =
+      "#b33";
+
   }
 
-  document.getElementById("quiz-next-btn").style.display = "inline-block";
+
+  nextButton.style.display = "inline-block";
+
 }
 
-function renderQuizResult() {
-  const quizCard = document.getElementById("quiz-container");
-  quizCard.innerHTML = `
-    <div style="text-align: center; padding: 2rem 0;">
-      <h3 style="font-size: 1.8rem; color: var(--gold); margin-bottom: 1rem;">Quiz Concluído!</h3>
-      <p style="font-size: 1.2rem; color: #fff; margin-bottom: 1.5rem;">Sua pontuação final foi: <strong>${score} de ${quizPerguntas.length}</strong></p>
-      <p style="color: var(--text-muted); margin-bottom: 2rem;">
-        ${score === quizPerguntas.length ? "Excelente! Você demonstra ótimo conhecimento sobre a história antirracista." : "Bom esforço! Continue explorando os conteúdos da página para aprender ainda mais."}
-      </p>
-      <button class="btn btn-primary" onclick="resetQuiz()">Refazer Quiz</button>
-    </div>
-  `;
-}
 
-function resetQuiz() {
-  location.reload();
-}
+nextButton.addEventListener("click", () => {
 
-// Modal
-function setupModal() {
-  const overlay = document.getElementById("modal-overlay");
-  const closeBtn = document.getElementById("modal-close");
+  currentQuestion++;
 
-  if (closeBtn && overlay) {
-    closeBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closeModal();
-    });
+  if (currentQuestion < questions.length) {
+
+    loadQuestion();
+
+  } else {
+
+    finishQuiz();
+
   }
-}
 
-function openModal(id) {
-  const figure = personalidades.find(p => p.id === id);
-  if (!figure) return;
+});
 
-  const body = document.getElementById("modal-body");
-  body.innerHTML = `
-    <span class="modal-tag">${getCategoriaLabel(figure.categoria)}</span>
-    <h3>${figure.nome}</h3>
-    <p>${figure.detalhes}</p>
-  `;
 
-  const overlay = document.getElementById("modal-overlay");
-  overlay.classList.add("active");
-  overlay.setAttribute("aria-hidden", "false");
-}
+function finishQuiz() {
 
-function closeModal() {
-  const overlay = document.getElementById("modal-overlay");
-  if (overlay) {
-    overlay.classList.remove("active");
-    overlay.setAttribute("aria-hidden", "true");
+  questionNumber.textContent =
+    "Quiz concluído!";
+
+  questionElement.textContent =
+    `Você acertou ${score} de ${questions.length} perguntas.`;
+
+  optionsElement.innerHTML = "";
+
+  feedbackElement.style.color = "#bd7920";
+
+  if (score === questions.length) {
+
+    feedbackElement.textContent =
+      "🎉 Excelente! Você acertou todas as perguntas!";
+
+  } else if (score >= 3) {
+
+    feedbackElement.textContent =
+      "👏 Muito bem! Você conhece bastante sobre o tema.";
+
+  } else {
+
+    feedbackElement.textContent =
+      "📚 Continue estudando e conhecendo a história.";
+
   }
+
+  nextButton.textContent =
+    "Refazer quiz";
+
+  nextButton.style.display =
+    "inline-block";
+
+  nextButton.onclick = restartQuiz;
+
 }
+
+
+function restartQuiz() {
+
+  currentQuestion = 0;
+
+  score = 0;
+
+  scoreElement.textContent =
+    "Pontos: 0";
+
+  nextButton.textContent =
+    "Próxima pergunta";
+
+  nextButton.onclick = null;
+
+  loadQuestion();
+
+}
+
+
+// Inicia o quiz
+
+loadQuestion();
+
+
+// ================================
+// ANIMAÇÃO DA REFLEXÃO
+// ================================
+
+reflectionText.style.transition =
+  "opacity .2s";
